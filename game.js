@@ -54,10 +54,10 @@ buttonColours = ["red" ,"blue", "green","yellow"];                 //step3
         
     // Add Animations To User Clicks
          
-         function animatePress(currentColour){
-             $(".btn").addClass("pressed");
-             setTimeout(function() {
-                $(".btn").removeClass('pressed');
+         function animatePress(currentColour){                     //step18
+             $(".btn").addClass("pressed");                        //step19,20
+             setTimeout(function() {                               //step21
+                $(".btn").removeClass('pressed'); 
             }, 100);
 
          }
