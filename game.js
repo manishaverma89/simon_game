@@ -52,7 +52,7 @@ buttonColours = ["red" ,"blue", "green","yellow"];                 //step3
          }
 
         
-    // Add Animations To User Clicks
+    // Add Animations To User Clicks  
          
          function animatePress(currentColour){                     //step18
              $(".btn").addClass("pressed");                        //step19,20
