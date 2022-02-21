@@ -9,9 +9,10 @@ var gamePattern = [];         //step5
 
 buttonColours = ["red", "blue", "green", "yellow"]; //step3
 
-function nextSequence() {                                  //step1
+function nextSequence() {                                 //step1
+  userClickedPattern = [];                               //step32
   level++;                                                 // step25
-  $("#level-title").text("level" + level);                 // step26
+  $("#level-title").text("Level " + level);             // step26
   var randomNumber = Math.floor(Math.random() * 4);        //step2
   var randomChosenColour = buttonColours[randomNumber];    //step4
   // console.log(randomChosenColour);        check random colors displayed in console by calling nextSequence();
@@ -42,6 +43,7 @@ $(".btn").click(function () {                        //step10
   //  console.log(userClickedPattern);
   playSound(userChosenColour);
   animatePress(userChosenColour);
+  checkAnswer(userClickedPattern.length-1);         //step28
 });
 
 
@@ -77,4 +79,39 @@ $(document).keypress(function () {           //step22
 });
 
 
-//step7 
+//step7 Check the User's Answer Against the Game Sequence8
+
+function checkAnswer(currentLevel) {                                                 //step27
+
+  if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {              //step29
+    console.log("Success");
+  }
+  if (userClickedPattern.length === gamePattern.length) {                            //step30
+    setTimeout(function () {                                                         //step31
+      nextSequence();
+    }, 1000);
+  } else {
+    console.log("wrong");
+
+//step8 Game Over 
+
+    playSound("wrong");                                                               //step33
+
+    $("body").addClass("game-over");                                                  //step34
+    setTimeout(function () {
+      $("body").removeClass("game-over");
+    }, 1000);
+
+    $("#level-title").text("Game Over, Press Any Key To restart");                    //step35
+    
+}
+
+}
+
+
+//step9  Restart The Game
+
+
+
+
+
