@@ -103,13 +103,20 @@ function checkAnswer(currentLevel) {                                            
     }, 1000);
 
     $("#level-title").text("Game Over, Press Any Key To restart");                    //step35
+    startOver();                                                                      //step37
     
-}
+    }
 
 }
 
 //step9  Restart The Game
 
+function startOver(){                                                                  //step36
+   level =  0;                                                                         //step38
+   gamePattern = [];
+   start = false;
+
+}
 
 
 
