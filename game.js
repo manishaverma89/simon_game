@@ -108,7 +108,6 @@ function checkAnswer(currentLevel) {                                            
 
 }
 
-
 //step9  Restart The Game
 
 
